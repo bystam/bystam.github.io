@@ -4,11 +4,15 @@ title:  "Implicit properties of your data model"
 date:   2024-03-20 20:49:49 +0100
 categories: serious
 ---
-I recently listened to a podcast with an interview of the author of the famous “The Grug Brained developer” blog post, Carson Gross. In that interview, he reiterated a point that he also made in the original blog post - saying something along the lines of:
+I recently listened to an interview of the author of the famous [“The Grug Brained developer”](https://grugbrain.dev) blog post, Carson Gross. In that interview, he reiterated a point that he also made in the original text - the quote being:
 
-> I have seen simple systems rapidly grow in complexity beyond my own ability to fully comprehend it. Sometimes in a matter of weeks.
+> one day code base understandable and grug can get work done, everything good!
+> 
+> next day impossible: complexity demon spirit has entered code and very dangerous situation!
 
-The last part was the most interesting one to me. That a simple system slowly evolves into a complex one through incremental additions of features, bug fixes and tweaks is a mystery to no one. But what are the kinds of changes that can break one's mental model of the workings of a system within just a couple of weeks? I will argue that I have an example of such a thing.
+The "next day impossible" is not only a funny expression. In the podcast he talked of experiencing a system growing beyond ones ability to comprehend it in just a matter of **weeks**.
+
+That a simple system slowly evolves into a complex one through incremental additions of features, bug fixes and tweaks is a mystery to no one. But what are the kinds of changes that can break one's mental model of the workings of a system within just a couple of weeks? I will argue that I have an example of such a thing.
 
 ### Implicit data modeling
 One thing we constantly do when programming is creating data models - be it in APIs, in the database or elsewhere. This is the bread and butter of working as a software developer.
@@ -35,10 +39,12 @@ Except - what about those implicit assumptions about the model? Suddenly we have
 
 Adding a completely new way of creating `User` has potentially broken the mental model a lot of your colleagues had. In a sense, the change turned out not to be backwards compatible at all. To adjust for it, lots of other integration points might be forced to be updated with an extra `where type = ‘real’` filter to restore the previous behavior. If you are a small company and you quickly identified all 3-5 of those integration points - great! If you are a bigger company, and you actually are not even aware of the existence of some teams who depended on the old behavior - uh oh…! Chances are that they won't know of your change until much later when they're starting to see "weird errors coming from the users API". Maybe the change in this crucial integration point has done some form of “irreversible damage”, such as accidentally sending emails to non-customers.
 
+Not to mention the fact that future feature additions now have to take demo users into account. Additions that might have fit naturally into the old version of the model might suddenly feel awkward in the new one.
+
 ### What else could have been done?
 The original bet was that “if people could try our platform out in a demo mode, then maybe they would be impressed enough to buy it”. Another approach here would be to identify a small, isolated subset of your product and simply copy-paste it into a stateless version that can be used without logging in at all. In other words closer to something like an “interactive mockup” that looks and feels like the real deal, but is more of a temporary playground. If it turns out users would like to keep their playground-work after signing up, you could potentially “import” that data into the real model after a successful signup.
 
-This might mean doing a little bit more work right now, and it might force you to keep two UIs up to date for now. But the upside is real. This kind of solution is way less likely to “leak” to the rest of the system and teams - and if it turns out that the demo mode turned out to not work, then simply deleting this copy is dirt cheap. In contrast, cleaning up the demo users could be expensive if their presence has had ripple effects in the system.
+This might mean doing a little bit more work upfront, and it might force you to keep two UIs up to date for now. But the upside is real. This kind of solution is way less likely to “leak” to the rest of the system and teams - and if it turns out that the demo mode turned out to not work, then simply deleting this copy is dirt cheap. In contrast, cleaning up the demo users could be expensive if their presence has had ripple effects in the system.
 
 
 ### In summary
