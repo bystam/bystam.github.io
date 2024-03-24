@@ -4,15 +4,15 @@ title:  "Implicit properties of your data model"
 date:   2024-03-20 20:49:49 +0100
 categories: serious
 ---
-I recently listened to an interview of the author of the famous [“The Grug Brained developer”](https://grugbrain.dev) blog post, Carson Gross. In that interview, he reiterated a point that he also made in the original text - the quote being:
+I recently listened to an interview of the author of the famous [“The Grug Brained Developer”](https://grugbrain.dev) blog post, Carson Gross. In that interview, he reiterated a point that he also made in the original text - the quote being:
 
 > one day code base understandable and grug can get work done, everything good!
 > 
 > next day impossible: complexity demon spirit has entered code and very dangerous situation!
 
-The "next day impossible" is not only a funny expression. In the podcast he talked of experiencing a system growing beyond ones ability to comprehend it in just a matter of **weeks**.
+The "next day impossible" is not only a funny expression. In the interview he talked of the experience of seeing a system grow beyond ones ability to comprehend it in just a matter of **weeks**.
 
-That a simple system slowly evolves into a complex one through incremental additions of features, bug fixes and tweaks is a mystery to no one. But what are the kinds of changes that can break one's mental model of the workings of a system within just a couple of weeks? I will argue that I have an example of such a thing.
+That a simple system **slowly** evolves into a complex one through incremental additions of features, bug fixes and tweaks is a mystery to no one. But what are the kinds of changes that can break one's mental model of the workings of a system within just a couple of weeks? I will argue that I have an example of such a thing.
 
 ### Implicit data modeling
 One thing we constantly do when programming is creating data models - be it in APIs, in the database or elsewhere. This is the bread and butter of working as a software developer.
