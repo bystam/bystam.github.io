@@ -177,4 +177,4 @@ But if you find yourself in a business domain where complex state transitions on
 
 But a lot of us actually DO make complex state transitions on singular data graphs. And some of us do use ORMs, and we are doing fine.
 
-Also, if you just hate all ORMs with a passion, then that's fine. Enjoy your `findPaymentsWithWithCustomerDataAndAccountInformationLastMonth` functions! 
+Also, if you just hate all ORMs with a passion, then that's fine. Enjoy your `findPaymentsWithWithCustomerDataAndAccountInformationFromLastMonth` functions! 
