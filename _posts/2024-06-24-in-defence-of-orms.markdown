@@ -29,7 +29,7 @@ It is natural that they start to gag when an online guide is suggesting you pick
 
 There are a couple of actual large problems with ORMs that I will totally admit.
 
-### Use an ORM to not learn SQL
+#### Use an ORM to not learn SQL
 
 This is a terrible idea. If you are using a relational SQL database, then learning how that SQL database works is key. Gavin King, the creator of Hibernate, even has [this to say about Hibernates relationship to its underlying database](https://www.reddit.com/r/programming/comments/2cnw8x/comment/cjhcoc7/):
 
@@ -45,7 +45,7 @@ I find this a little less convincing. If anything, the design of the tools are o
 
 I suspect there might be another culprit, however...
 
-### Hibernate
+#### Hibernate
 
 Most of the ORM complaints I have heard come from people fighting with Hibernate specifically. I have spent my time working mostly on the JVM, which means it could just be a sampling bias, but I rarely hear people complain about Rails' ActiveRecord the way they do about JPA/Hibernate.
 
@@ -59,7 +59,7 @@ The combination of all these attributes, together with the fact that all of them
 
 ActiveRecord on the other hand, and my recent JVM favorite [Kotlin Exposed](https://jetbrains.github.io/Exposed/deep-dive-into-dao.html), are both inheritance based models, where your ORM data models inherit from some base class, and interacting with the state of your object means said changes propagating down to some underlying mechanism. In Kotlin Exposed, the "magic" that happens in my ORM classes can be found by simply using "go to definition" in my IDE. Inheritance gets a bad rap these days, but it is in fact a pretty appealing choice for building a simple 80/20 ORM.
 
-### Spring Data JPA
+#### Spring Data JPA
 
 The dominant application building framework on the JVM is Spring, and more recently Spring Boot. Boot specifically (inspired by Rails) is a "convention over configuration" library which helps you set up a "sane defaults" configuration to quickly get going without having to make too many choices upfront.
 
@@ -173,7 +173,9 @@ In the `Complaint` example of the previous section, it would make perfect sense 
 * Use the ORM for interacting and working with a single complaint in your system
 * Use SQL to generate charts and reports for open complaints
 
-But if you find yourself in a business domain where complex state transitions on singular types are rare, then it makes perfect sense to never even consider an ORM. If you deal with huge imports of mostly immutable data, batch processing of information or running complex queries on large datasets using Hibernate, then yes you are going to have a bad time.
+## In sum
+
+If you find yourself in a business domain where complex state transitions on singular types are rare, then it makes perfect sense to never even consider an ORM. If you deal with huge imports of mostly immutable data, batch processing of information or running complex queries on large datasets using Hibernate, then yes you are going to have a bad time.
 
 But a lot of us actually DO make complex state transitions on singular data graphs. And some of us do use ORMs, and we are doing fine.
 
