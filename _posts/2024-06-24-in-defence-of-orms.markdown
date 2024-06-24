@@ -2,7 +2,7 @@
 layout: post
 title:  "In Defence of ORMs"
 date:   2024-06-24 11:00:44 +0200
-categories: serious
+categories: takes
 ---
 Object Relational Mapping tools are an extremely contentious topic these days. Today, all it takes is for someone to write on a forum or walk up on speaker stage, proclaim:
 
