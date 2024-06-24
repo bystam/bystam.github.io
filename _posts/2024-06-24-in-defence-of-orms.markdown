@@ -10,7 +10,7 @@ Object Relational Mapping tools are an extremely contentious topic these days. T
 
 and what follows will be a standing ovation, virtual or in real life.
 
-In my experience, your typical ORM hater is smart, productive and very influential in wherever they work. That is why it has taken me so long to figure out whether I disagree with them, or if I am simply too stupid to have come to the same conclusion.
+In my experience, your typical ORM hater is smart, productive and very influential wherever they work. That is why it has taken me so long to figure out whether I disagree with them, or if I am simply too stupid to have come to the same conclusion.
 
 It was not until I heard that at least one more influential programming influencer actually DO see them as valuable that I begin to let myself defend them intellectually.
 
@@ -73,33 +73,31 @@ I don't think the desire to create a happy-path setup for database interaction i
 
 ORMs let you express several database tables as a single object graph. For many complex [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) systems, the ability to encapsulate state transitions underneat a single object is a real help.
 
-Imagine you have an model that encapsulates a claim made by a user to an insurance company. Imagine one crucial state transition of this case is "closing" it, when it is considered done. In a real world application, changes like these are usually non-trivial. Let us imagine that we have the following things that need to happen in our database:
-* The `claim` needs to be marked as `closed_at = now()`
-* A `claim_event` needs to be inserted expressing that it was closed
-* If there are any `claim_task` entries that are still unresolved, we wish to add another `claim_event` expressing that
-* If there are any `claim_task` entries marked as `escalated`, we reject closing altogether
+Imagine you have an model that encapsulates a complaint made by a customer to some company. Imagine one crucial state transition of this complaint is "closing" it, when it is considered handled by your support staff. In a real world application, changes like these are usually non-trivial. Let us imagine that we have the following things that need to happen in our database:
+* The `complaint` needs to be marked as `closed_at = now()`
+* A `complaint_event` needs to be inserted expressing that it was closed
+* If there are any `complaint_task` entries that are still unresolved, we wish to add another `complaint_event` expressing that
+* If there are any `complaint_task` entries marked as `escalated`, we reject closing altogether
 
 Using some hypithetical ORM, the code would typically end up looking like this (using Kotlin):
 
 ```kotlin
-class Claim {
+class Complaint {
   private var closedAt: Instant? = null
 
-  @OneToMany(...)
-  private val tasks: MutableList<ClaimTask> = ArrayList()
-  
-  @OneToMany(...)
-  private val events: MutableList<ClaimEvent> = ArrayList()
+  private val tasks: OneToMany<ComplaintTask> = OneToMany()
+
+  private val events: OneToMany<ComplaintEvent> = OneToMany()
 
   fun close() {
     val hasEscalated = tasks.any { it.isEscalated }
-    if (hasEscalated) throw IllegalStateException("Can't close claim with escalated tasks")
+    if (hasEscalated) throw IllegalStateException("Can't close complaint with escalated tasks")
 
     val hasUnresolvedTasks = tasks.any { !it.isResolved }
     if (hasUnresolvedTasks) {
-        events += ClaimEvent(claim = this, description = "Claim closed with unresolved tasks")
+        events += ComplaintEvent(complaint = this, description = "Complaint closed with unresolved tasks")
     }
-    events += ClaimEvent(claim = this, description = "Claim closed")
+    events += ComplaintEvent(complaint = this, description = "Complaint closed")
     closedAt = Instant.now()
   }
 }
@@ -109,43 +107,43 @@ in this model, all the rules related to closing are protected inside this functi
 
 Without the use of an ORM, the same code ends to look something like this...
 ```kotlin
-class ClaimService(
+class ComplaintService(
     // dao == "data access object"
-    private val dao: ClaimDao
+    private val dao: ComplaintDao
 ) {
 
-    fun closeClaim(id: String) {
-        val tasks = dao.findTasksByClaimId(id)
+    fun closeComplaint(id: String) {
+        val tasks = dao.findTasksByComplaintId(id)
         val hasEscalated = tasks.any { it.isEscalated }
-        if (hasEscalated) throw IllegalStateException("Can't close claim with escalated tasks")
+        if (hasEscalated) throw IllegalStateException("Can't close complaint with escalated tasks")
 
         val hasUnresolvedTasks = tasks.any { !it.isResolved }
         if (hasUnresolvedTasks) {
-            dao.addEvent(claimId = id, description = "Claim closed with unresolved tasks")
+            dao.addEvent(complaintId = id, description = "Complaint closed with unresolved tasks")
         }
-        dao.addEvent(claimId = id, description = "Claim closed")
-        dao.updateClaimSetClosedAt(claimId = id, closedAt = Instant.now())
+        dao.addEvent(complaintId = id, description = "Complaint closed")
+        dao.updateComplaintSetClosedAt(complaintId = id, closedAt = Instant.now())
     }
 }
 
-class ClaimDao(
+class ComplaintDao(
     private val database: Database
 ) {
 
-    fun findTasksByClaimId(claimId: String): List<ClaimTask> {
+    fun findTasksByComplaintId(complaintId: String): List<ComplaintTask> {
         return database
-            .query("SELECT * FROM claim_tasks WHERE claim_id = ?", claimId)
-            .convertTo<List<ClaimTask>>()
+            .query("SELECT * FROM complaint_tasks WHERE complaint_id = ?", complaintId)
+            .convertTo<List<ComplaintTask>>()
     }
 
-    fun addEvent(claimId: String, description: String) {
+    fun addEvent(complaintId: String, description: String) {
         database
-            .update("INSERT INTO claim_event (claim_id, description) VALUES (?, ?)", claimId, description)
+            .update("INSERT INTO complaint_event (complaint_id, description) VALUES (?, ?)", complaintId, description)
     }
 
-    fun updateClaimSetClosedAt(claimId: String, closedAt: Instant) {
+    fun updateComplaintSetClosedAt(complaintId: String, closedAt: Instant) {
         database
-            .update("UPDATE claim_event SET closed_at = ? WHERE claim_d = ?", closedAt, claimId)
+            .update("UPDATE complaint_event SET closed_at = ? WHERE complaint_d = ?", closedAt, complaintId)
     }
 }
 ```
@@ -157,7 +155,7 @@ In a real world application, I tend to see that the latter "just write SQL" patt
 * ... or all common queries and updates are placed in a single DAO type like upstairs
   * This in order to have reusable database interaction functions
 
-Both of these styles fail to capture the strengths of the original ORM one. Splitting things up in more layers can cause the ["separation of concerns problem"](https://en.wikipedia.org/wiki/Separation_of_concerns#HTML,_CSS,_JavaScript) where code must be read across multiple files to be understood. The DAO facades tend to get so big and hyper-specialized that you often find yourself always adding new functions for anything you write, creating an ocean of functions that have all their filters and joins in their name like `findAllTasksWithOutcomeAndBlockersWhereIsNotDeletedAndClaimId`.
+Both of these styles fail to capture the strengths of the original ORM one. Splitting things up in more layers can cause the ["separation of concerns problem"](https://en.wikipedia.org/wiki/Separation_of_concerns#HTML,_CSS,_JavaScript) where code must be read across multiple files to be understood. The DAO facades tend to get so big and hyper-specialized that you often find yourself always adding new functions for anything you write, creating an ocean of functions that have all their filters and joins in their name like `findAllTasksWithOutcomeAndBlockersWhereIsNotDeletedAndComplaintId`.
 
 But most importantly, the ORM pattern creates a single place where you more or less HAVE to add state changes to, which means you also need to review how your addition or change affects the other rules of said type. In a "just write SQL" world, it is not uncommon for a new addition to the code to simply ignore any other attempts at controlling the lifecyle of data by just adding new update functions from the side. None of these patterns make either possible or impossible, but ORMs definitely is stronger at co-locating the state itself and its changes.
 
@@ -171,8 +169,12 @@ But virtually all people who hates ORMs with a passion can recall debugging a pe
 
 I mean, that's exactly why ORMs are designed as leaky abstractions by design. If you need to make complex queries, then just bypass the ORM. That's the whole point. ORMs are there to help you express complex **changes** of the data, while still letting you operate freely with the database on the side. Every single ORM I have encountered bakes in raw SQL access in its public API, without having to set up a database connection from the side.
 
-But if you find yourself in a business domain where complex state transitions on singular types are rare, then it makes perfect sense to never consider an ORM. If you deal with huge imports of mostly immutable data, batch processing of information or running complex queries on large datasets using Hibernate, then yes you are going to have a bad time.
+In the `Complaint` example of the previous section, it would make perfect sense to:
+* Use the ORM for interacting and working with a single complaint in your system
+* Use SQL to generate charts and reports for open complaints
+
+But if you find yourself in a business domain where complex state transitions on singular types are rare, then it makes perfect sense to never even consider an ORM. If you deal with huge imports of mostly immutable data, batch processing of information or running complex queries on large datasets using Hibernate, then yes you are going to have a bad time.
 
 But a lot of us actually DO make complex state transitions on singular data graphs. And some of us do use ORMs, and we are doing fine.
 
-**_Do with that what you will._**
+Also, if you just hate all ORMs with a passion, then that's fine. Enjoy your `findPaymentsWithWithCustomerDataAndAccountInformationLastMonth` functions! 
