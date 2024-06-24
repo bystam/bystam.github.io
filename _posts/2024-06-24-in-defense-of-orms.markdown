@@ -175,7 +175,7 @@ In the `Complaint` example of the previous section, it would make perfect sense 
 
 ## In sum
 
-![Meme](assets/skinner-orms.jpeg)
+![Meme](/assets/skinner-orms.jpeg)
 
 If you find yourself in a business domain where complex state transitions on singular types are rare, then it makes perfect sense to never even consider an ORM. If you deal with huge imports of mostly immutable data, batch processing of information or running complex queries on large datasets using Hibernate, then yes you are going to have a bad time.
 
