@@ -2,7 +2,7 @@
 layout: post
 title:  "Implicit properties of your data model"
 date:   2024-03-20 20:49:49 +0100
-categories: serious
+categories: takes
 ---
 I recently listened to an interview of the author of the famous [“The Grug Brained Developer”](https://grugbrain.dev) blog post, Carson Gross. In that interview, he reiterated a point that he also made in the original text - the quote being:
 
