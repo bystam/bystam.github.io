@@ -80,7 +80,7 @@ It is not a particularly hot or contrarian take to say that when people say "cle
 
 Now, you might expect me to say that splitting up state and state transitions in separate files and motivating it by saying that it is "tidy", "clean" or "nice" is doing something without real, provable benefits. That's not enough however. I would go as far as saying that it is an emotional attachment to something that has glaringly obvious drawbacks.
 
-<Du skriver ingenting om faktiska/upplevda pros av att ha state i en fil och transitions i en annan - lägg till nåt om att du hört folk säga att man inte blir distraherad av state transitions när man bara vill veta vad ett objekt "är">
+[//]: # <Du skriver ingenting om faktiska/upplevda pros av att ha state i en fil och transitions i en annan - lägg till nåt om att du hört folk säga att man inte blir distraherad av state transitions när man bara vill veta vad ett objekt "är">
 
 ### The drawbacks
 
