@@ -41,9 +41,9 @@ But today I am not interested in small, ugly things like being able to parse Mar
 
 ## Pandora's by far least favorite box
 
-The following insight came to me when I was visiting KotlinConf this year, and I saw a talk related to library API design in Kotlin. There was this one bit at the end of it, an off-hand comment made by the presenter, that triggered something in me. The full quote:
+The following insight came to me when I was visiting KotlinConf this year, and I saw a talk related to library API design in Kotlin. There was this [one bit in the middle of it](https://youtu.be/1HK2TrBwC1o?t=694), a comment made by the presenter, that triggered something in me. The full quote:
 
-> Kotlin extension functions are amazing. I think it's so nice to separate what a type **is** and **what it can do**. 
+> You can also add [Kotlin Extension Functions] to types that you own... And I also like to do that because it makes a clear separation between what is core in your class, and what is not. Another way to think about it is that you have classes for your data, and then you have extension functions for your code.
 
 After I saw it said explicitly, it dawned on me that I see this pattern **a lot** in my professional life.
 
@@ -78,9 +78,9 @@ Let us look a bit closer at the pros and cons.
 
 It is not a particularly hot or contrarian take to say that when people say "clean" what they actually mean is "code I like". Most developers agree that it is of supreme importance that code is easy to read. Some people, of course, will make the case that code being "clean" **IS** what makes it readable. At the same time, the only way to actually prove that said "clean" code is actually easy to read would be to write the same program twice; once strictly with the pattern and once without, and then have several third parties try to interpret the code and somehow grade their ability to understand it.
 
-Now, you might expect me to say that splitting up state and state transitions in separate files and motivating it by saying that it is "tidy", "clean" or "nice" is doing something without real, provable benefits. That's not enough however. I would go as far as saying that it is an emotional attachment to something that has glaringly obvious drawbacks.
+The proposed benefits of this split is that it makes sense to only look at a type as **what it contains**, and filter away everything about **what it does**. This is meant to be less distracting when you simply want to know what properties something has, and vice versa.
 
-[//]: # <Du skriver ingenting om faktiska/upplevda pros av att ha state i en fil och transitions i en annan - lägg till nåt om att du hört folk säga att man inte blir distraherad av state transitions när man bara vill veta vad ett objekt "är">
+Now, you might expect me to say that splitting up state and state transitions in separate files and motivating it by saying that it is "tidy", "clean" or "nice" is doing something without real, provable benefits. That's not enough however. I would go as far as saying that it is an emotional attachment to something that has glaringly obvious drawbacks.
 
 ### The drawbacks
 
