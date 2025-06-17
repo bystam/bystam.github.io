@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Is perfect consistency really good?"
-date: 2025-06-30 11:00:44 +0200
+date: 2025-06-17 11:00:44 +0200
 categories: takes
 ---
 
