@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Is perfect consistency really good?"
+title: "Perfect consistency - bad, actually?"
 date: 2025-06-17 11:00:44 +0200
 categories: takes
 ---
