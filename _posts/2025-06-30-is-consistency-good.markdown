@@ -19,7 +19,7 @@ As with anything related to software, there is hardly any science to back up any
 
 How certain are we that consistency actually does improve our ability to comprehend what is written? I think a lot about what works for myself when I configure my editor. My preferred color schemes make code look like a Christmas tree; I want as much discrepancy between different syntactic and semantic elements as possible. Function parameters, local variables and class fields all have different colors? Love it. Global variables are in cursive? Amazing. Methods/functions are blue while member variables are white? That's the stuff.
 
-There is something about things being visually different that [helps my brain subconsciously](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) make sense of it without me needing to explicitly read and think hard about the tokens.
+There is something about things being visually different that [helps my brain subconsciously](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) make sense of it without me needing to explicitly read and think hard about the tokens. Giving different constructs of the source code a certain level of [salience](<https://en.wikipedia.org/wiki/Salience_(neuroscience)>) helps me identify important things without contemplating every identifier or paranthesis.
 
 Here's how the creator of a [particular font for dyslexic people](https://dyslexiefont.com/en/) describes what makes it simpler to read:
 
