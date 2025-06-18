@@ -21,7 +21,7 @@ It was not until I heard that at least one more influential programming influenc
 
 The hatred for ORMs is not unfounded. I would never go so far as to say that anyone who says their application became simpler when they tossed it out in favour of just writing SQL strings is lying. Lots and lots of of especially Java shops have been burnt on the JPA/Hibernate stove, and you will hear them complaining about:
 
-- fighting weird, implicit `1+N` performance problems
+- fighting weird, implicit `N+1` performance problems
 - debugging unexpected flushing and cache invalidation behaviours
 - never truly understanding the correct combination of annotations to get their many-to-many to work
 
