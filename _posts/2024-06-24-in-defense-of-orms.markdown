@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "In Defense of ORMs"
-date:   2024-06-24 11:00:44 +0200
+title: "In Defense of ORMs"
+date: 2024-06-24 11:00:44 +0200
 categories: takes
 ---
+
 Object Relational Mapping tools are an extremely contentious topic these days. Today, all it takes is for someone to write on a forum or walk up on a speaker stage, proclaim:
 
 > Don't use an ORM - just write SQL
@@ -18,7 +19,8 @@ It was not until I heard that at least one more influential programming influenc
 
 ## The criticism
 
-The hatred for ORMs is not unfounded. I would never go so far as to say that anyone who says their application became simpler when they tossed it out in favour of just writing SQL strings is lying. Lots and lots of of especially Java shops have been burnt on the JPA/Hibernate stove, and you will hear them complaining about: 
+The hatred for ORMs is not unfounded. I would never go so far as to say that anyone who says their application became simpler when they tossed it out in favour of just writing SQL strings is lying. Lots and lots of of especially Java shops have been burnt on the JPA/Hibernate stove, and you will hear them complaining about:
+
 - fighting weird, implicit `1+N` performance problems
 - debugging unexpected flushing and cache invalidation behaviours
 - never truly understanding the correct combination of annotations to get their many-to-many to work
@@ -74,12 +76,13 @@ I don't think the desire to create a happy-path setup for database interaction i
 ORMs let you express several database tables as a single object graph. For many complex [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing) systems, the ability to encapsulate state transitions underneat a single object is a real help.
 
 Imagine you have an model that encapsulates a complaint made by a customer to some company. Imagine one crucial state transition of this complaint is "closing" it, when it is considered handled by your support staff. In a real world application, changes like these are usually non-trivial. Let us imagine that we have the following things that need to happen in our database:
-* The `complaint` needs to be marked as `closed_at = now()`
-* A `complaint_event` needs to be inserted expressing that it was closed
-* If there are any `complaint_task` entries that are still unresolved, we wish to add another `complaint_event` expressing that
-* If there are any `complaint_task` entries marked as `escalated`, we reject closing altogether
 
-Using some hypithetical ORM, the code would typically end up looking like this (using Kotlin):
+- The `complaint` needs to be marked as `closed_at = now()`
+- A `complaint_event` needs to be inserted expressing that it was closed
+- If there are any `complaint_task` entries that are still unresolved, we wish to add another `complaint_event` expressing that
+- If there are any `complaint_task` entries marked as `escalated`, we reject closing altogether
+
+Using some hypothetical ORM, the code would typically end up looking like this (using Kotlin):
 
 ```kotlin
 class Complaint {
@@ -106,6 +109,7 @@ class Complaint {
 in this model, all the rules related to closing are protected inside this function. The pattern, when used like this, encourages expressing multi-table state transitions and invariants deep down on the "database type" itself, right next to the database column declarations. This achieves really high levels of [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/).
 
 Without the use of an ORM, the same code ends to look something like this...
+
 ```kotlin
 class ComplaintService(
     // dao == "data access object"
@@ -147,13 +151,15 @@ class ComplaintDao(
     }
 }
 ```
+
 ... if you are lucky. If you instead work with people who would rather write DAO functions for `hasEscalatedTasks` or `hasUnresolvedTasks`, then you will have even more specialized methods on he second class.
 
 In a real world application, I tend to see that the latter "just write SQL" pattern tends to come in two shapes:
-* Either whatever code is run inside the Service just executes SQL directly...
-  * This in order to avoid excessive layering (which I am a fan of!)
-* ... or all common queries and updates are placed in a single DAO type like upstairs
-  * This in order to have reusable database interaction functions
+
+- Either whatever code is run inside the Service just executes SQL directly...
+  - This in order to avoid excessive layering (which I am a fan of!)
+- ... or all common queries and updates are placed in a single DAO type like upstairs
+  - This in order to have reusable database interaction functions
 
 Both of these styles fail to capture the strengths of the original ORM one. Splitting things up in more layers can cause the ["separation of concerns problem"](https://en.wikipedia.org/wiki/Separation_of_concerns#HTML,_CSS,_JavaScript) where code must be read across multiple files to be understood. The DAO facades tend to get so big and hyper-specialized that you often find yourself always adding new functions for anything you write, creating an ocean of functions that have all their filters and joins in their name like `findAllTasksWithOutcomeAndBlockersWhereIsNotDeletedAndComplaintId`.
 
@@ -170,8 +176,9 @@ But virtually all people who hate ORMs with a passion can recall debugging a per
 I mean, that's exactly why ORMs are designed as leaky abstractions by design. If you need to make complex queries, then just bypass the ORM. That's the whole point. ORMs are there to help you express complex **changes** of the data, while still letting you operate freely with the database on the side. Every single ORM I have encountered bakes in raw SQL access in its public API, without having to set up a database connection from the side.
 
 In the `Complaint` example of the previous section, it would make perfect sense to:
-* Use the ORM for interacting and working with a single complaint in your system
-* Use SQL to generate charts and reports for open complaints
+
+- Use the ORM for interacting and working with a single complaint in your system
+- Use SQL to generate charts and reports for open complaints
 
 ## In sum
 
@@ -181,4 +188,4 @@ If you find yourself in a business domain where complex state transitions on sin
 
 But a lot of us actually DO make complex state transitions on singular data graphs. And some of us do use ORMs, and we are doing fine.
 
-Also, if you just hate all ORMs with a passion, then that's fine. Enjoy your `findUnresolvedPaymentsWithCustomerDataAndAccountInformationFromLastMonth` functions! 
+Also, if you just hate all ORMs with a passion, then that's fine. Enjoy your `findUnresolvedPaymentsWithCustomerDataAndAccountInformationFromLastMonth` functions!
