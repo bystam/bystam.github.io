@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I want a system with things, not data"
-date: 2026-11-30 11:00:44 +0200
+date: 2030-11-30 11:00:44 +0200
 categories: takes
 ---
 
