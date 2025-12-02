@@ -5,6 +5,8 @@ date: 2030-11-30 11:00:44 +0200
 categories: takes
 ---
 
+# https://www.desmos.com/calculator/28vttpsipw
+
 As anybody sufficiently interested in software development, I spend a decent amount of time thinking about what makes certain software designs either good or bad. In this instance, more specificaly, what makes them easy to work with or not. More specifically, I am constantly chasing new and better ways to express in natural language if there are any similarities, and ways to describe what makes for a good design as opposed to a bad one.
 
 I have become friends with one such way of thinking about them - and I call it "models vs. exceptions".
