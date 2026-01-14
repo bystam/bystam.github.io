@@ -5,8 +5,6 @@ date: 2030-11-30 11:00:44 +0200
 categories: takes
 ---
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every time I see an AI button in a UI somewhere I cringe and ignore it. Simultaneously I’m going nuts with my agents. Why is consumer AI so shit? <a href="https://t.co/6tVxCFCabR">https://t.co/6tVxCFCabR</a></p>&mdash; Armin Ronacher ⇌ (@mitsuhiko) <a href="https://twitter.com/mitsuhiko/status/2010406878870643086?ref_src=twsrc%5Etfw">January 11, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 There is something that has been bugging me in the back of my mind for the past few months. Some kind of feeling that what I am hearing and reading is not what is truly happening. Yes, this is yet another blog post about AI. Hopefully one that contains something novel.
 
 As I said - I feel like there is something brewing - something people are not talking about. This is not about people being fraudulent, or gaslighting us, although I suspect there is some amount of that going on too. A lot of people talk about the "AI bubble" right now. Anecdotally, it feels like a majority of people in tech agree/suspect that there is one. Even a substantial amount of people who love LLMs and have close to completely stopped writing code by hand will admit that there likely is some level of bubble in the industry.
@@ -49,16 +47,44 @@ If we look at the last 20 years, there seems to be an extremely visible plateau 
 
 - TODO: insert examples of Windows, Liquid glass etc
 
-Now
+Now, you might think that I am being unfair. During the first of those two decades, an entire computer format (mobile smartphones) was brought to market, and massive online ecosystems such as social media platforms were brought to life. It is only natural that there were significantly more software being built between 2006 and 2016 than the decade after that.
 
-### AI for writing code faster
+But also - LLMs and AI, you could say, **is one of those new platforms**. So just you wait. In 2036, you will have replaced all your software again.
+
+But does it look like we are headed that way?
+
+### AI for building new user experiences
+
+Let us compare AI to the expansion of the internet or the release of the smartphone. The argument then would be that AI as a technology will enable entirely new ways to interact with computers, which will open the door to sizable new ways to create value and improve the lives of people.
+
+ChatGPT has been out for over three years now - and several of its open and closed competitors were not far behind. Have we seen that sweeping revolution in computer interactions come into fruition?
+
+In comparison, the iPhone was released in 2008 - and the App Store (including the tools to build your own apps) one year after that. in 2009, you had the very first opportunity to install custom apps on your phone. By 2012, it felt like everyday computer interactions had radically shifted to be a mobile thing. Social media had become something you do on your smartphone, Spotify had an iOS app released months after the unveiling of the app store, and various chat apps had completely replaced SMS.
+
+Except for the actual big chatbot companies (OpenAI, Google etc) - where is all the amazing LLM powered functionality? Virtually all companies I see have tried - and for the most part people despise their attempts. Microsoft is being dragged in various online spaces for their attempts to squeeze Copilot into everything. Even famous AI-influencers (in the programming space) bemoan the use of AI in various products:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Every time I see an AI button in a UI somewhere I cringe and ignore it. Simultaneously I’m going nuts with my agents. Why is consumer AI so shit? <a href="https://t.co/6tVxCFCabR">https://t.co/6tVxCFCabR</a></p>&mdash; Armin Ronacher ⇌ (@mitsuhiko) <a href="https://twitter.com/mitsuhiko/status/2010406878870643086?ref_src=twsrc%5Etfw">January 11, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I concede that the AI platforms themselves have successfully built useful products on top of these technologies. But so far, it does not appear to scale to the entire industry. Not in the ways the smartphone or the internet did.
+
+### AI as a productivity tool
+
+Another way people expect AI to revolutionize work is as a productivity tool. Especially as a means of generating code.
+
+Sam Altman began his stardom as the face of AI by declaring his intent for AI to cure cancer or make novel discoveries within physics. Despite that, it looks like most frontier model companies spend a lot of their time shipping products dedicated to "agentic programming". Products like Claude Code have become so popular that now even political journalists talk about it:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">AI continues to cause my productivity to plummet because I keep messing around with Claude Code rather than actually writing articles. <a href="https://t.co/oYmfjBBgJT">pic.twitter.com/oYmfjBBgJT</a></p>&mdash; Matthew Yglesias (@mattyglesias) <a href="https://twitter.com/mattyglesias/status/2009656349744087283?ref_src=twsrc%5Etfw">January 9, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Last year was a bit of a watershed moment for LLM-assisted programming. With the release of Opus 4.5 and ChatGPT 5.2, a serious amount of independently minded software influencers changed their mind from "AI cannot write good production code" to "actually AI writes most of my code now".
 
 To me it looks like the tide is turning. Maybe this is not just an astroturfed fad that will pass in a year or two. Maybe most people will truly write code using "Agents" (or whatever comes next) in the near future. Heck, what if the models get good enough to simply help all of us write just as good code we would write by hand - but at a significantly higher pace. If that happens, then the AI hypesters will have won, right?
 
-### AI for building new user experiences
+But here is where I go back to where I started this article. Look at the direction we have been headed in the past decade. Will accelerating our productivity in said direction... actually lead to a lot of valuable software?
+
+Even the most crazed, bullish AI influencers online are all about how "AI can write **as good code as senior developers**, but faster". I rarely hear them talk about, or expect, that LLMs would transcend human talent and surpass us when it comes to software quality. Given that LLMs are trained on all of our existing code - making it become significantly better seems like a tricky problem to solve. If it is even solvable with the existing model architectures.
+
+So if the wildest dreams of Dario Amodei come true, and we boost or productivity writing code tenfold, are we certain we won't just spew out even more irrelevant SaaS garbage? Even more blur animations in our Finder windows that cause even harder frame rate drops? Even more addictive, attention-hacking software that [ruin the brains of our kids](https://news.ki.se/using-social-media-may-impair-childrens-attention) and make them [suicidal](https://www.cdc.gov/mmwr/volumes/73/su/su7304a3.htm)?
+
+If AI is the productivity powerhouse that its proponents claim - are we actually in a place where we know what we would do with it? Or has software development seriously stagnated in the past decade?
 
 ## Learnings from the internet
-
-###
