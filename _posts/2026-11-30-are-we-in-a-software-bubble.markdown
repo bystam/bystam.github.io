@@ -87,4 +87,20 @@ So if the wildest dreams of Dario Amodei come true, and we boost or productivity
 
 If AI is the productivity powerhouse that its proponents claim - are we actually in a place where we know what we would do with it? Or has software development seriously stagnated in the past decade? Maybe Casey Muratori is right when he says that it is ironic that we managed to get an AI that replicates our programming at a time when software development standards are at an absolute rock bottom.
 
-## Learnings from the internet
+## Learnings from the internet and social media
+
+While it is only tangential to my main point, I think it is fair to also compare the explosive rise of AI platforms to that of social media. There is something to be said about how the past two decades have been shaped by social media platforms such as Instagram, Twitter, TikTok, Snapschat and Youtube.
+
+The companies behind all these apps have made an insane amount of money, all carried by the underlying micro-targeted advertisement business model. The market value created by these companies is insane, as the software enables thousands of companies to use Google, Youtube, Facebook/Instagram etc to reach the perfect target audience for their products.
+
+But there is an invisible tax that has been paid by the public, too. In the past decade, countless pieces of evidence has surfaced of the drawbacks of the algorithmic social media feeds - from [whistleblowers inside the companies](https://en.wikipedia.org/wiki/Frances_Haugen) to research linking social media use to [lower life satisfaction](https://pubmed.ncbi.nlm.nih.gov/39412670/) and [erosion of trust in society](https://academic.oup.com/joc/article/75/1/1/7907139).
+
+As we we slide speed-run our way to the AI dream world as imagined by the likes of Marc Andreessen, do we believe that the software we build today will help us reverse these trends? Or are we falling ever faster into a lonelier landscape filled with anime AI companions, robot-written blog posts and an ocean of auto-generated music on Spotify?
+
+## Conclusion
+
+This was a mixed bag of what obviously looks like AI pessimism. I am not a doomer in the sense that I think AI will become super-intelligent and erase us from the planet. It feels more likely that it will become the next iteration of social media: it will throw the likes of Lovable to fantasy-sized IPOs, while make our children less educated and more miserable.
+
+I am also filled with hope, however. Hope that this time, maybe it is more obvious to us what is happening. Maybe we will get tired of Suno-produced music and Clippy 2.0 early enough to see what we truly want. From the way people react to all the new AI-based features, maybe there is hope that people start chasing truly valuable technology instead?
+
+Peter Thiel once said that ["We wanted flying cars, instead we got 140 characters"](https://thevcfactory.com/we-wanted-flying-cars-instead-we-got-140-characters-peter-thiel/). This was a condensed version of his criticism that in the past half century, we have made laughably little progress in the "world of atoms". Instead, everything has happened in the "world of bits". I honestly could not agree more.
