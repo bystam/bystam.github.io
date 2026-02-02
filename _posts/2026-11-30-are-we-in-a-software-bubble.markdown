@@ -71,7 +71,7 @@ I concede that the AI platforms themselves have successfully built useful produc
 
 Another way people expect AI to revolutionize work is as a productivity tool. Especially as a means of generating code.
 
-Sam Altman began his stardom as the face of AI by declaring his intent for AI to cure cancer or make novel discoveries in the field of physics. Despite these ambitious ideas, it looks like most frontier model companies spend the majority of their time shipping products dedicated to "agentic programming". These tools have become so popular that even billioaire CEOs seem to play around with them:
+Sam Altman began his stardom as the face of AI by declaring his intent for AI to cure cancer or make novel discoveries in the field of physics. Despite these ambitious ideas, it looks like most frontier model companies spend the majority of their time shipping products dedicated to "agentic programming". Tools like Claude Code have become so popular that even billioaire CEOs with business degrees seem to play around with them:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Watching Claude Code mass-murder backend tasks in seconds then spend 45 minutes misaligning a button...<br><br>... has given me more insight into the frontend vs backend engineer wars than a decade in tech. I used to think frontend engineers were being dramatic...<br><br>😂😂😂</p>&mdash; Sebastian Siemiatkowski (@klarnaseb) <a href="https://twitter.com/klarnaseb/status/2015159591051424096?ref_src=twsrc%5Etfw">January 24, 2026</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
