@@ -97,7 +97,9 @@ But there is an invisible tax that has been paid by the public, too. In the past
 
 As we speed-run our way to the AI dream world as imagined by the likes of Marc Andreessen, do we believe that the software we build today will help us reverse these trends? Or are we falling ever faster into a lonelier landscape filled with anime AI companions, robot-written blog posts and an ocean of auto-generated music on Spotify?
 
-As I was typing this blog post, OpenAI literally announced their [plan to insert ads into ChatGPT](https://openai.com/index/our-approach-to-advertising-and-expanding-access/). Time seems to be a flat circle, and the internet still seems to have only a single kind of business model. [senator we run ads]
+As I was typing this blog post, OpenAI literally announced their [plan to insert ads into ChatGPT](https://openai.com/index/our-approach-to-advertising-and-expanding-access/). Time seems to be a flat circle, and the internet still seems to have only a single kind of business model.
+
+![senator-we-run-ads](/assets/ad-ceos.png)
 
 ## So why a bubble?
 
