@@ -27,7 +27,7 @@ The sceptics will tell you that all of this is a bubble:
 - LLMs, while they can surely generate code, cannot generate good enough code at a large scale to be truly valuable.
 - LLMs are a crutch that let people avoid learning.
 
-You have heard these takes before. Pubic figures bearish on AI think that the LLMs will fail to live up to the hype, and that the markets will crash. This is nothing new.
+You have heard these takes before. Public figures bearish on AI think that the LLMs will fail to live up to the hype, and that the markets will crash. This is nothing new.
 
 But that is not what is bugging me. What I am starting to wonder is this: What if there is nothing wrong with the capabilities of the LLMs. **What if we are simply unable to build anything useful with them?**
 
