@@ -117,6 +117,6 @@ I am also filled with hope, however. Hope that this time, maybe it is more obvio
 
 Peter Thiel once said that ["We wanted flying cars, instead we got 140 characters"](https://thevcfactory.com/we-wanted-flying-cars-instead-we-got-140-characters-peter-thiel/). This was a condensed version of his criticism that in the past half century, we have made laughably little progress in the "world of atoms". Instead, everything has happened in the "world of bits". I honestly could not agree more.
 
-Maybe, if we are in a software bubble, and it bursts - this could actually be great for software development as a field. Come to think of it, in the aftermath of the dot-com bubble, the broken remains of the software industry managed to created a tremendous amount of world altering products: Wikipedia, Facebook, Youtube, Gmail, Git, Skype, Google Maps and World of Warcraft...
+Maybe, if we are in a software bubble, and it bursts - this could actually be great for software development as a field. Come to think of it, in the aftermath of the dot-com bubble, the broken remains of the software industry managed to create a tremendous amount of world altering products: Wikipedia, Facebook, Youtube, Gmail, Git, Skype, Google Maps and World of Warcraft...
 
 Could we become that good at building software yet again?
