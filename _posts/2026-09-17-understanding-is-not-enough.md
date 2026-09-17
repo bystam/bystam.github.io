@@ -7,9 +7,9 @@ categories: takes
 
 There's an ongoing debate among people who pay attention to the evolving nature of software development whether reading and understanding the code produced by an AI agent is crucial or a thing of the past.
 
-Some people will argue that there is such a thing as code that has to be read and understood in detail, such as fundamental security aspects of your system or things like payment processing - but that most other things can instead be quality-controlled simply through automated tests and AI review.
+Some people will argue that there is **some** code that has to be read and understood in detail, such as fundamental security aspects of your system or things like payment processing, but that **most other** things can instead be quality-controlled simply through automated tests and AI review.
 
-This is a not a blog post arguing about those people and arguments. Whether or not that's the future for our industry I cannot say. Instead - I will talk about the other, more conservative side, who argues that "agentic programming is great but you should still read and understand the code".
+This is a not a blog post arguing about those people and arguments. Whether or not that's the future for our industry I cannot say. Instead, I will talk about the other, more conservative, side who argues that "agentic programming is great but you should still read and understand the code".
 
 Because I feel that the debate is hung up on something comparatively irrelevant.
 
