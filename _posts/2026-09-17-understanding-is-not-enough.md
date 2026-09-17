@@ -27,7 +27,7 @@ Similarly, I am very comfortable with writing Kotlin code - but I have never wor
 
 Or imagine I were an expert "web frontend programmer", who just decided to dive into server side programming for the first time. My strong skills in Typescript will surely lead me to understand something like Java or Go. But do I have what it takes to actually tell a good solution from a bad one? Did I just generate something that makes perfect sense, or did I accidentally instruct the agent to move heaven and earth for me in the system, because I actually don't fully know what I want?
 
-This extends beyond programming languages and ecosystems too. Today it is simpler than ever to dive head first into a business domain either at a new job or at a different department of your current one and start producing code and resolving tickets. But if you are not truly familiar with the problem space, the users of your product and the historical evolution of the system - then will you have what it takes to judge your additions?
+This extends beyond programming languages and ecosystems too. Today it is simpler than ever to dive head first into a business domain either at a new job or at a different department of your current one and start producing code and resolving tickets. But if you are not truly familiar with the problem space, the users of your product and the historical evolution of the system - then are you actually equipped to judge your additions?
 
 ## Understanding what you want
 
