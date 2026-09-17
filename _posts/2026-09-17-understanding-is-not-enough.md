@@ -31,7 +31,7 @@ This extends beyond programming languages and ecosystems too. Today it is simple
 
 ## Understanding what you want
 
-To me, it is important to know what you would like the solution to be shaped like when you generate it. To have a sense of the architecture you are building towards. This might not mean that you have to review and understand every single line of every function - but it means that you have an idea and strong opinion on the overall design. You need to know how to take the original problem description and turn it into actually well informed instructions for the AI. That is rarely as simple as taking the description in the ticket and hoping that the model is strong enough to figure it out.
+To me, it is important to know what you would like the solution to be shaped like when you generate it. To have a sense of the architecture you are building towards. This might not mean that you have to review and understand every single line of every function - but it means that you have an idea and strong opinion on the overall design. You need to know how to take the original problem description and turn it into actually well informed instructions for the AI. That is rarely as simple as taking the description in the ticket and hoping that the model is powerful enough to figure it out.
 
 And to my knowledge, this still can only be earned through experience. By letting your brain exercise, thinking hard on problems, failing and learning from your mistakes, pushing through the friction and ultimately building familiarity with your problem space.
 
